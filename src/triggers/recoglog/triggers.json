@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Parse Recognize Log Line",
+    "patterns": [
+      {
+        "pattern": "^(?<day>\\d+/\\d+/\\d+) (?<time>\\d+:\\d+:\\d+) (?<recogniser>\\w+) has recognised (?<recognised>\\w+) for: (?<reason>.+)",
+        "type": "regex"
+      }
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "recog",
+    "regex": "^(?i)recog$",
+    "script": "recoginator.usage()"
+  },
+  {
+    "name": "recog help",
+    "regex": "^(?i)recog (usage|help)$",
+    "script": "recoginator.usage()"
+  },
+  {
+    "name": "recog add",
+    "regex": "^(?i)recog add (\\w+) (.+)",
+    "script": "recoginator.add(matches[2]:title(), matches[3])"
+  },
+  {
+    "name": "recog window",
+    "regex": "^(?i)recog window (.+)",
+    "script": "recoginator.setWindow(matches[2])"
+  },
+  {
+    "name": "recog reprintOnMain",
+    "regex": "^(?i)recog reprintOnMain (yes|no|true|false)$",
+    "script": "recoginator.reprintOnMain = (matches[2] == 'yes' or matches[2] == 'true') and true or false\nrecoginator.save()"
+  },
+  {
+    "name": "recog display",
+    "regex": "^(?i)recog (display|list)$",
+    "script": "recoginator.display()"
+  },
+  {
+    "name": "recog do",
+    "regex": "^(?i)recog do (\\d+)$",
+    "script": "recoginator.recognizeByIndex(tonumber(matches[2]))"
+  },
+  {
+    "name": "recog del",
+    "regex": "^(?i)recog del (\\d+)$",
+    "script": "recoginator.removeByIndex(tonumber(matches[2]))"
+  },
+  {
+    "name": "recog delall",
+    "regex": "^(?i)recog delall (\\w+)$",
+    "script": "if tonumber(matches[2]) then recoginator.removeAllByIndex(tonumber(matches[2])) else recoginator.removeAll(matches[2]) end"
+  },
+  {
+    "name": "recog undo",
+    "regex": "^(?i)recog undo$",
+    "script": "recoginator.undo()"
+  },
+  {
+    "name": "recog slots",
+    "regex": "^(?i)recog slots (\\d+)$"
+  },
+  {
+    "name": "recog width",
+    "regex": "^(?i)recog width (\\d+)$",
+    "script": "recoginator.setWidth(matches[2])"
+  },
+  {
+    "name": "recogniselog",
+    "regex": "^(?i)recogni[sz]elog$"
+  }
+]
