@@ -2,7 +2,7 @@
   {
     "name": "recog",
     "regex": "^(?i)recog$",
-    "script": "recoginator.usage()"
+    "script": "recoginator.display()"
   },
   {
     "name": "recog help",
@@ -23,11 +23,6 @@
     "name": "recog reprintOnMain",
     "regex": "^(?i)recog reprintOnMain (yes|no|true|false)$",
     "script": "recoginator.reprintOnMain = (matches[2] == 'yes' or matches[2] == 'true') and true or false\nrecoginator.save()"
-  },
-  {
-    "name": "recog display",
-    "regex": "^(?i)recog (display|list)$",
-    "script": "recoginator.display()"
   },
   {
     "name": "recog do",

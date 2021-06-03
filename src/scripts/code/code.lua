@@ -237,7 +237,7 @@ function recoginator.display()
   local bannerText = ft.fText("Welcome to the RECOGINATOR!", {alignment = "center", width = width, cap = "*", inside = true})
   local msg = string.format("\n<white>%s\n%s\n", starline, bannerText)
   if window ~= "main" then clearWindow(window) end
-  cechoPopup(window, msg, {recoginator.display, function() recoginator.undo(true) end}, {"Reprint display", "undo last action"}, true)
+  cechoPopup(window, msg, {recoginator.display, function() recoginator.undo(true) end, recoginator.usage}, {"Reprint display", "undo last action", "Show alias usage"}, true)
   printTable.rows = {}
   local index = 0
   if table.is_empty(data) then
@@ -337,12 +337,11 @@ function recoginator.usage()
     cecho("<orange>" .. wrapped .. "\n")
   end
   cecho("<orange>Recoginator!<r> Usage:\n")
-  oecho("recog", "print this message")
+  oecho("recog", "Prints out the list of recognitions in the queue")
   oecho("recog help", "print this message")
-  oecho("recog add", "add someone to the queue for recognition")
+  oecho("recog add <name> <reason>", "add <name> to the queue for <reason>")
   oecho("recog window <window>", "set the window to display recoginator queue in. Use main for the main game output area")
   oecho("recog reprintOnMain <yes|no>", "Reprint the queue after interaction even on the main window?")
-  oecho("recog display", "Prints out the list of recognitions in the queue")
   oecho("recog do <#>","perform the recognition command for index # provided, if you have slots left")
   oecho("recog del <#>","removes the entry at index # provided")
   oecho("recog delall <# or name>","removes all entries in the queue for the person named, or the person from index # provided")

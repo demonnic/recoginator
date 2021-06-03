@@ -7,7 +7,7 @@ Enter the recogINATOR! which allows you to maintain a queue of people who need r
 
 ## Usage
 
-`recog display` shows your queue. It is clickable on the titlebar and numbers.
+`recog` shows your queue. It is clickable on the titlebar and numbers.
 
 `recog add <person> <reason>` to add someone to the queue.
 
